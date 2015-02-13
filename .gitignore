@@ -2,3 +2,7 @@
 /Pods/*
 Podfile
 Podfile.lock
+.DS_Store
+*.swp
+*.xcodeproj
+*.xcworkspace
