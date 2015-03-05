@@ -13,6 +13,6 @@
 
 + (instancetype)shared;
 
-- (void)connect:(NSString *) peripheralName;
+- (void)scan;
 
 @end

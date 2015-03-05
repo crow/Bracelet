@@ -1,18 +1,18 @@
 //
-//  BraceletPattern.m
+//  BraceletLED.m
 //  Bracelet
 //
-//  Created by David Crow on 2/1/15.
+//  Created by David Crow on 2/23/15.
 //  Copyright (c) 2015 dcrow.us. All rights reserved.
 //
 
-#import "BraceletPattern.h"
+#import "BraceletLED.h"
 
-@implementation BraceletPattern
+@implementation BraceletLED
 
 -(id)init {
     if (self = [super init] ) {
-
+        
     }
 
     return self;

@@ -7,6 +7,7 @@
 //
 
 #import "User.h"
+#import "BraceletConstants.h"
 
 #define DEFINE_SHARED_INSTANCE_USING_BLOCK(block) \
 static dispatch_once_t pred = 0; \
@@ -22,6 +23,18 @@ return _sharedObject; \
     DEFINE_SHARED_INSTANCE_USING_BLOCK(^{
         return [[self alloc] init];
     });
+}
+
+-(id)init {
+    if (self = [super init] ) {
+    }
+    return self;
+}
+
+-(void) loadSavedUser {
+    if ([[NSUserDefaults standardUserDefaults] valueForKey:kBraceletID]){
+        self.braceletID = [[NSUserDefaults standardUserDefaults] valueForKey:kBraceletID];\
+    }
 }
 
 @end

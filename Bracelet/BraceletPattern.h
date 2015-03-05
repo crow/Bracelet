@@ -7,38 +7,23 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "BraceletLED.h"
 
 @interface BraceletPattern : NSObject
 
 /**
- * Represents the boundary crossing event type.
+ * Bracelet LEDs.  This isn't ideal if the device changes number of LEDs, but is very straightforward for the current
+ * 5 LED design.
  */
-typedef NS_ENUM(NSInteger, DefaultPatterns) {
+@property (strong, nonatomic) BraceletLED *braceletLED1;
 
-    /**
-     * Solid color pattern
-     */
-    patternSolid = 0,
+@property (strong, nonatomic) BraceletLED *braceletLED2;
 
-    /**
-     * Random pattern
-     */
-    patternRandom = 1,
+@property (strong, nonatomic) BraceletLED *braceletLED3;
 
-    /**
-     * Rainbow pattern
-     */
-    patternRainbow = 2,
+@property (strong, nonatomic) BraceletLED *braceletLED4;
 
-    /**
-     * Sensor pattern originating from iOS device sensors
-     */
-    patternSensor = 3,
+@property (strong, nonatomic) BraceletLED *braceletLED5;
 
-    /**
-     * Sensor pattern originating from BLE peripheral sensors
-     */
-    patternSensorPeripheral = 4,
-};
 
 @end

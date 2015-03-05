@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		611B91CB1A9934EF00757221 /* PatternGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 611B91CA1A9934EF00757221 /* PatternGenerator.m */; };
+		611B91DB1A9C110600757221 /* BraceletLED.m in Sources */ = {isa = PBXBuildFile; fileRef = 611B91DA1A9C110600757221 /* BraceletLED.m */; };
 		61CA92C61A4366D100E5A8EE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 61CA92C51A4366D100E5A8EE /* main.m */; };
 		61CA92C91A4366D100E5A8EE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 61CA92C81A4366D100E5A8EE /* AppDelegate.m */; };
 		61CA92CC1A4366D100E5A8EE /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 61CA92CB1A4366D100E5A8EE /* ViewController.m */; };
@@ -33,6 +35,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		611B91C91A9934EF00757221 /* PatternGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PatternGenerator.h; sourceTree = "<group>"; };
+		611B91CA1A9934EF00757221 /* PatternGenerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PatternGenerator.m; sourceTree = "<group>"; };
+		611B91D91A9C110600757221 /* BraceletLED.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BraceletLED.h; sourceTree = "<group>"; };
+		611B91DA1A9C110600757221 /* BraceletLED.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BraceletLED.m; sourceTree = "<group>"; };
 		61CA92C01A4366D100E5A8EE /* Bracelet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bracelet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		61CA92C41A4366D100E5A8EE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		61CA92C51A4366D100E5A8EE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -82,6 +88,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		611B91DC1A9C18C900757221 /* Bracelet Model */ = {
+			isa = PBXGroup;
+			children = (
+				61F3283F1A7D7E11003331DA /* Bracelet.h */,
+				61F328401A7D7E11003331DA /* Bracelet.m */,
+				611B91D91A9C110600757221 /* BraceletLED.h */,
+				611B91DA1A9C110600757221 /* BraceletLED.m */,
+				61F3284F1A7ED5F4003331DA /* BraceletPattern.h */,
+				61F328501A7ED5F4003331DA /* BraceletPattern.m */,
+			);
+			name = "Bracelet Model";
+			sourceTree = "<group>";
+		};
 		61CA92B71A4366D100E5A8EE = {
 			isa = PBXGroup;
 			children = (
@@ -107,14 +126,13 @@
 			children = (
 				61CA92C71A4366D100E5A8EE /* AppDelegate.h */,
 				61CA92C81A4366D100E5A8EE /* AppDelegate.m */,
-				61F3283F1A7D7E11003331DA /* Bracelet.h */,
-				61F328401A7D7E11003331DA /* Bracelet.m */,
 				61F328421A7D7EE2003331DA /* SensorManager.h */,
 				61F328431A7D7EE2003331DA /* SensorManager.m */,
 				61F328481A7D806E003331DA /* PeripheralManager.h */,
 				61F328491A7D806E003331DA /* PeripheralManager.m */,
-				61F3284F1A7ED5F4003331DA /* BraceletPattern.h */,
-				61F328501A7ED5F4003331DA /* BraceletPattern.m */,
+				611B91C91A9934EF00757221 /* PatternGenerator.h */,
+				611B91CA1A9934EF00757221 /* PatternGenerator.m */,
+				611B91DC1A9C18C900757221 /* Bracelet Model */,
 				61F3284C1A7D8945003331DA /* User.h */,
 				61F3284D1A7D8945003331DA /* User.m */,
 				61CA92CA1A4366D100E5A8EE /* ViewController.h */,
@@ -315,6 +333,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				611B91CB1A9934EF00757221 /* PatternGenerator.m in Sources */,
 				61CA92CC1A4366D100E5A8EE /* ViewController.m in Sources */,
 				61F3284E1A7D8945003331DA /* User.m in Sources */,
 				61F3284A1A7D806E003331DA /* PeripheralManager.m in Sources */,
@@ -323,6 +342,7 @@
 				61F328441A7D7EE2003331DA /* SensorManager.m in Sources */,
 				61CA92C61A4366D100E5A8EE /* main.m in Sources */,
 				61F328411A7D7E11003331DA /* Bracelet.m in Sources */,
+				611B91DB1A9C110600757221 /* BraceletLED.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

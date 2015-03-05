@@ -44,7 +44,7 @@ return _sharedObject; \
     });
 }
 
-- (void)connect:(NSString *) peripheralName {
+- (void)scan {
 
     [[LGCentralManager sharedInstance] scanForPeripheralsByInterval:2
                                                          completion:^(NSArray *peripherals)
@@ -53,7 +53,10 @@ return _sharedObject; \
          // Populated nearby peripheral arrays
          if (peripherals.count) {
              for (LGPeripheral *peripheral in LGCentralManager.sharedInstance.peripherals) {
+                 // Sort peripherals into correct buckets
                  [self sortPeripheral:peripheral];
+                 // Connect to peripherals
+                 [self testPeripheral:peripheral];
              }
 
          }
@@ -62,7 +65,9 @@ return _sharedObject; \
 
 // Adds peripheral to it's correct connected array
 -(void) sortPeripheral:(LGPeripheral *) peripheral {
-    if ([peripheral.name isEqualToString:kDefaultBraceletName] && [peripheral.UUIDString isEqualToString:[[User shared] myBraceletID]] ) {
+    if ([peripheral.name isEqualToString:kDefaultBraceletName] && [peripheral.UUIDString isEqualToString:[[User shared] braceletID]] ) {
+        // If it's the user's bracelet
+
     }
 }
 
@@ -95,12 +100,14 @@ return _sharedObject; \
     }];
 }
 
+
+// Starts the pattern stream at interval kWriteRate
 - (void) startPatternStream {
 
     if (![NSThread isMainThread]) {
 
         dispatch_async(dispatch_get_main_queue(), ^{
-            [NSTimer scheduledTimerWithTimeInterval:0.1
+            [NSTimer scheduledTimerWithTimeInterval:kWriteRate
                                              target:self
                                            selector:@selector(patternStream)
                                            userInfo:nil
@@ -108,7 +115,7 @@ return _sharedObject; \
         });
     }
     else{
-        [NSTimer scheduledTimerWithTimeInterval:0.1
+        [NSTimer scheduledTimerWithTimeInterval:kWriteRate
                                          target:self
                                        selector:@selector(patternStream)
                                        userInfo:nil

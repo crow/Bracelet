@@ -7,6 +7,9 @@
 //
 
 #import "SensorManager.h"
+#import <CoreMotion/CoreMotion.h>
+#import <AVFoundation/AVFoundation.h>
+#import "PatternGenerator.h"
 
 #define DEFINE_SHARED_INSTANCE_USING_BLOCK(block) \
 static dispatch_once_t pred = 0; \
@@ -16,6 +19,10 @@ _sharedObject = block(); \
 }); \
 return _sharedObject; \
 
+@interface SensorManager ()
+
+@end
+
 @implementation SensorManager
 
 + (instancetype)shared {
@@ -23,5 +30,7 @@ return _sharedObject; \
         return [[self alloc] init];
     });
 }
+
+
 
 @end

@@ -18,6 +18,11 @@
 
 @property  (nonatomic, strong) BraceletPattern *currentPattern;
 
+@property (nonatomic, strong) LGPeripheral *peripheral;
+
 @property (nonatomic, strong) LGCharacteristic *writeCharacteristic;
+
+@property (nonatomic, strong) LGCharacteristic *readCharacteristic;
+
 
 @end

@@ -11,12 +11,17 @@
 
 // These are 'hardcoded' rfduino characteristics defined by rfduino people
 #define kRfduinoServiceUUID @"2220"
-#define - @"2222"
+#define kRfduinoSendUUID @"2222"
 #define kRfduinoReceiveUUID @"2221"
 #define kRfduinoDisconnectUUID @"2223"
 
 #define kTestingBraceletName @"lightVest"
 #define kDefaultBraceletName @"Bracelet"
 #define kDefaultBreathingSensorName @"MantraBand"
+
+#define kBraceletID @"kBraceletID"
+
+// write interval in seconds
+static const double kWriteRate=0.1;
 
 #endif

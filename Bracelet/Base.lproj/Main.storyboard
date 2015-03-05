@@ -2,7 +2,6 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14A379a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -29,24 +28,17 @@
                                     <action selector="connect:" destination="BYZ-38-t0r" eventType="touchUpInside" id="DGg-84-JLS"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="pci-3X-O6G">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="pci-3X-O6G" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-16" id="0bm-Ao-311"/>
-                            <constraint firstItem="pci-3X-O6G" firstAttribute="centerX" secondItem="eVF-E4-H2a" secondAttribute="centerX" id="2EL-bb-7Md"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="pci-3X-O6G" secondAttribute="trailing" constant="-16" id="7YF-FL-cMJ"/>
-                            <constraint firstItem="pci-3X-O6G" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" id="UzR-vN-c77"/>
-                            <constraint firstItem="pci-3X-O6G" firstAttribute="centerY" secondItem="eVF-E4-H2a" secondAttribute="centerY" id="ZRd-SB-kXe"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="pci-3X-O6G" secondAttribute="bottom" id="hTa-Hl-vKw"/>
+                            <constraint firstAttribute="centerY" secondItem="eVF-E4-H2a" secondAttribute="centerY" id="IQ5-n3-t20"/>
+                            <constraint firstAttribute="centerX" secondItem="eVF-E4-H2a" secondAttribute="centerX" id="n9U-ex-t5R"/>
                         </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="315" y="75"/>
+            <point key="canvasLocation" x="863" y="124"/>
         </scene>
     </scenes>
 </document>

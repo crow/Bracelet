@@ -12,6 +12,6 @@
 
 + (instancetype)shared;
 
-@property (strong, nonatomic) NSString *myBraceletID;
+@property (strong, nonatomic) NSString *braceletID;
 
 @end

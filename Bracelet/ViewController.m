@@ -29,7 +29,7 @@
 
 - (IBAction)connect:(id)sender {
     //TODO change this once you have a bracelet with correct name in firmware
-    [[PeripheralManager shared] connect:kTestingBraceletName];
+    [[PeripheralManager shared] scan];
 }
 
 - (void)didReceiveMemoryWarning {

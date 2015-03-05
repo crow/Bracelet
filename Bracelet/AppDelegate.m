@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "LGBluetooth.h"
 #import "UAirship.h"
+#import "User.h"
 
 @interface AppDelegate ()
 
@@ -18,7 +19,13 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    // Initialize LGCentralManager
     [LGCentralManager sharedInstance];
+
+    // Initialize user
+    [User shared];
+
+    //probably want to scan here to auto populate a list 
 
     return YES;
 }
