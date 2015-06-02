@@ -8,11 +8,21 @@
 
 #import <Foundation/Foundation.h>
 #import <CoreBluetooth/CoreBluetooth.h>
+#import "Bracelet.h"
 
 @interface PeripheralManager : NSObject
 
 + (instancetype)shared;
 
 - (void)scan;
+
+// The current user's bracelet
+@property (nonatomic, strong) Bracelet *userBracelet;
+
+// The sensor devices
+@property (nonatomic, strong) NSMutableArray *nearbySensorPeripherals;
+
+// Array of all Bracelets nearby before connecting
+@property (nonatomic, strong) NSMutableArray *nearbyBracelets;
 
 @end

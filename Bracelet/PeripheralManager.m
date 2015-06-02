@@ -22,17 +22,9 @@ return _sharedObject; \
 @interface PeripheralManager ()
 
 @property (nonatomic, strong) LGCharacteristic *writeCharacteristic;
+@property (nonatomic, strong) LGCharacteristic *readCharacteristic;
 
 @property (nonatomic) int randomNumber;
-
-// The current user's bracelet
-@property (nonatomic, strong) Bracelet *userBracelet;
-
-// The sensor devices
-@property (nonatomic, strong) NSMutableArray *nearbySensorPeripherals;
-
-// Array of all Bracelets nearby before connecting
-@property (nonatomic, strong) NSMutableArray *nearbyBracelets;
 
 @end
 
@@ -66,8 +58,8 @@ return _sharedObject; \
 // Adds peripheral to it's correct connected array
 -(void) sortPeripheral:(LGPeripheral *) peripheral {
     if ([peripheral.name isEqualToString:kDefaultBraceletName] && [peripheral.UUIDString isEqualToString:[[User shared] braceletID]] ) {
-        // If it's the user's bracelet
-
+        // If it's the user's bracelet add as userBracelet
+        self.userBracelet = [Bracelet braceletWithPeripheral:peripheral writeCharacteristic:self.writeCharacteristic readCharacteristic:self.readCharacteristic];
     }
 }
 
@@ -79,14 +71,14 @@ return _sharedObject; \
                 if ([service.UUIDString isEqualToString:kRfduinoServiceUUID]) {
                     [service discoverCharacteristicsWithCompletion:^(NSArray *characteristics, NSError *error) {
                         __block int i = 0;
-                        for (LGCharacteristic *charact in characteristics) {
-                            if ([charact.UUIDString isEqualToString:kRfduinoSendUUID]) {
+                        for (LGCharacteristic *characteristic in characteristics) {
+                            if ([characteristic.UUIDString isEqualToString:kRfduinoSendUUID]) {
 
-                                self.writeCharacteristic = charact;
+                                self.writeCharacteristic = characteristic;
                                 [self startPatternStream];
 
                             } else {
-                                [charact readValueWithBlock:^(NSData *data, NSError *error) {
+                                [characteristic readValueWithBlock:^(NSData *data, NSError *error) {
                                     if (++i == 3) {
                                         [peripheral disconnectWithCompletion:nil];
                                     }

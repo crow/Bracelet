@@ -24,5 +24,8 @@
 
 @property (nonatomic, strong) LGCharacteristic *readCharacteristic;
 
++ (instancetype)braceletWithPeripheral:(LGPeripheral *)peripheral
+                   writeCharacteristic:(NSString *)writeCharacteristic
+                    readCharacteristic:(NSString *)readCharacteristic;
 
 @end

@@ -20,12 +20,14 @@
     return self;
 }
 
-+ (instancetype)braceletWithPeripheral:(LGPeripheral *)peripheral writeCharacteristic:(NSString *)writeCharacteristic readCharacteristic:(NSString *)readCharacteristic
-
-{
++ (instancetype)braceletWithPeripheral:(LGPeripheral *)peripheral
+                   writeCharacteristic:(LGCharacteristic *)writeCharacteristic
+                    readCharacteristic:(LGCharacteristic *)readCharacteristic {
     Bracelet *bracelet = [[self alloc] init];
 
     bracelet.peripheral = peripheral;
+    bracelet.readCharacteristic = readCharacteristic;
+    bracelet.writeCharacteristic = writeCharacteristic;
 
     return bracelet;
 }
