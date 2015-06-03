@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E17e" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Tz1-pr-mS1">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -40,51 +41,79 @@
             </objects>
             <point key="canvasLocation" x="768" y="288"/>
         </scene>
-        <!--Special connectable things-->
+        <!--Special Connectable Things-->
         <scene sceneID="DZN-1w-zP1">
             <objects>
-                <tableViewController id="wOn-GN-v0Y" sceneMemberID="viewController">
+                <tableViewController id="wOn-GN-v0Y" customClass="PeripheralsTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="82" sectionHeaderHeight="22" sectionFooterHeight="22" id="ktk-cB-oj1">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" rowHeight="82" id="AcQ-EW-7CU">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="braceletCell" rowHeight="82" id="AcQ-EW-7CU" customClass="BraceletTableViewCell">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="AcQ-EW-7CU" id="cSe-gV-Kab">
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xb3-xb-5BA">
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xb3-xb-5BA">
                                             <rect key="frame" x="8" y="0.0" width="81" height="81"/>
-                                            <state key="normal" image="870-smile.png">
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="81" id="obz-t3-IeL"/>
+                                                <constraint firstAttribute="width" constant="81" id="ydZ-Nw-1dq"/>
+                                            </constraints>
+                                            <state key="normal" image="870-smile">
+                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                        </button>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My Bracelet" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9aO-DZ-Mst">
+                                            <rect key="frame" x="97" y="30" width="256" height="21"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="256" id="mrT-8q-7MA"/>
+                                                <constraint firstAttribute="height" constant="21" id="uJf-VO-mtE"/>
+                                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="21" id="vUC-WP-yNQ"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M0H-fP-I3e">
+                                            <rect key="frame" x="478" y="0.0" width="81" height="81"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="81" id="VJ4-Oo-VI6"/>
+                                                <constraint firstAttribute="height" constant="81" id="qTS-bQ-kIX"/>
+                                            </constraints>
+                                            <state key="normal" image="843-link">
                                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
                                         </button>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstItem="9aO-DZ-Mst" firstAttribute="leading" secondItem="cSe-gV-Kab" secondAttribute="leadingMargin" constant="89" id="6BK-kI-MiM"/>
+                                        <constraint firstItem="xb3-xb-5BA" firstAttribute="top" secondItem="cSe-gV-Kab" secondAttribute="topMargin" constant="-8" id="APh-QE-50w"/>
+                                        <constraint firstItem="M0H-fP-I3e" firstAttribute="trailing" secondItem="cSe-gV-Kab" secondAttribute="trailingMargin" id="WFr-oW-EWV"/>
+                                        <constraint firstAttribute="centerY" secondItem="M0H-fP-I3e" secondAttribute="centerY" id="ayS-ym-vmY"/>
+                                        <constraint firstItem="xb3-xb-5BA" firstAttribute="leading" secondItem="cSe-gV-Kab" secondAttribute="leadingMargin" id="bvO-Fz-PRA"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="9aO-DZ-Mst" secondAttribute="bottom" constant="22" id="vgx-zR-LjR"/>
+                                        <constraint firstItem="9aO-DZ-Mst" firstAttribute="top" secondItem="cSe-gV-Kab" secondAttribute="topMargin" constant="22" id="ywd-6a-G77"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="braceletIconButton" destination="xb3-xb-5BA" id="03k-iv-ngR"/>
+                                    <outlet property="braceletLabel" destination="9aO-DZ-Mst" id="29d-7M-1iF"/>
+                                    <outlet property="braceletLinkIndicatorButton" destination="M0H-fP-I3e" id="GH4-y8-gr9"/>
                                     <segue destination="859-jV-JEU" kind="show" id="mEw-X5-87S"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="82" id="t6A-5b-Nvv">
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="t6A-5b-Nvv" id="Tix-kw-dbY">
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="82" id="6gE-cp-ukr">
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="6gE-cp-ukr" id="Vzt-hl-hw2">
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
                         </prototypes>
                         <connections>
-                            <outlet property="dataSource" destination="wOn-GN-v0Y" id="JmY-bW-wZH"/>
-                            <outlet property="delegate" destination="wOn-GN-v0Y" id="WX7-g4-j9U"/>
+                            <outlet property="dataSource" destination="wOn-GN-v0Y" id="W5w-a5-uxH"/>
+                            <outlet property="delegate" destination="wOn-GN-v0Y" id="4b0-Hr-hBO"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Special connectable things" id="ze7-iq-2pa"/>
+                    <navigationItem key="navigationItem" title="Special Connectable Things" id="ze7-iq-2pa"/>
+                    <connections>
+                        <outlet property="tableView" destination="ktk-cB-oj1" id="aIx-dO-iou"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LpD-VY-L5i" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -150,6 +179,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="870-smile.png" width="28" height="28"/>
+        <image name="843-link" width="28" height="28"/>
+        <image name="870-smile" width="28" height="28"/>
     </resources>
 </document>
